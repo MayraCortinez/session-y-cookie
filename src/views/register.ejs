@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    </head>
+
+    <body class="body-categoria">
+
+
+        <div class="uk-section ">
+
+            <h1 class="uk-text-center">
+                <%= title %>
+            </h1>
+            <a href="/">Home</a>
+
+            <div class="uk-container  uk-flex uk-flex-center">
+
+
+                <div class="containe">
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <form method="POST" action="">
+                                <div class="ab-3">
+                                    <label for="name" class="form-label">Ingrese su nombre</label>
+                                    <input class="uk-input" type="text" id="name" name="name" required value="<%= locals.old && old.nombre ? old.nombre : "" %>">
+                                </div>
+                                <div class="ab-3">
+                                    <label for="email" class="form-label">Ingrese su email</label>
+                                    <input class="uk-input" type="text" id="email" name="email" required value="<%= locals.old && old.mail ? old.mail : "" %>">
+                                </div>
+                                <div class="ab-3">
+                                    <label for="edad" class="form-label">Ingrese su edad</label>
+                                    <input class="uk-input" name="edad" id="edad" required value="<%= locals.old && old.edad ? old.edad : "" %>" >
+                                </div>
+                                <div class="ab-3">
+                                    <label for="color" class="form-label">Color</label>
+                                    <select class="register__form-select" name="color" id="color">
+                                        <option value="" hidden selected>Seleccione color...</option>
+                                        <option value="naranja">Naranja</option>
+                                        <option value="amarillo">Amarillo</option>
+                                    </select>
+                                </div>
+                                <div class="ab-3">
+                                    <label for="guardarColor" class="form-label">Recordar elección</label>
+                                    <input type="checkbox" name="guardar-color">
+
+                                    <label for="olvidarColor" class="form-label">Olvidar color</label>
+                                    <input type="checkbox" name="guardar-color">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <% if (typeof errors != 'undefined') { %>
+                <p style="color: red;">ERROR</p>
+                <ul>
+                    <% for( let i = 0; i < errors.length; i++ ) { %>
+                     <li>
+                        <%= errors[i].msg %> 
+                     </li>
+                    <% } %>
+                </ul>
+            <% } %>
+    </body>
+
+</html>

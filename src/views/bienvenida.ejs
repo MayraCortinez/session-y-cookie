@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head') %>
+  <body class="<%= usuario.color %> ">
+    <h1><%= title %></h1>
+    <a href="/">Home</a>
+    <main>
+        <h2>Hola <%= usuario.name %> </h2>
+        <h3>Elegiste el color <%= usuario.color %> </h3>
+        <h4>Tu email es <%= usuario.email %> </h4>
+        <h5>Tu edad es <%= usuario.edad %> </h5>
+    </main>
+  </body>
+</html>
